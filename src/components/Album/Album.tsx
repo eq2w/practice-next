@@ -1,6 +1,7 @@
 import { Photos } from "../../models";
 import Api from "@/api/api";
 import "./index.css";
+import Image from "next/image";
 
 type Props = {
 	albumId: number;
@@ -17,7 +18,7 @@ const Album = async ({ albumId }: Props) => {
 		<div className="album-container">
 			{data.map((photo) => (
 				<div key={photo.id} className="photo-container">
-					<img src={photo.url} className="photo-img" />
+					<Image src={photo.url} className="photo-img" alt="Photo" />
 				</div>
 			))}
 		</div>
